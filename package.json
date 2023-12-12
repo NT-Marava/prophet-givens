@@ -1,5 +1,5 @@
 {
-  "name": "vachizenga",
+  "name": "prophet-givens",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:vachizenga": "node dist/vachizenga/server/server.mjs"
+    "serve:ssr:prophet-givens": "node dist/prophet-givens/server/server.mjs"
   },
   "private": true,
   "dependencies": {
