@@ -1,0 +1,58 @@
+<section class="about-area-eight pb-100" style="background: #140e26;">
+    <div class="container"></div>
+</section>
+
+<section class="project-details-area pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="project-details-wrap">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="blog-widget">
+                                <youtube-player [videoId]="currentVideoId"></youtube-player>
+                            </div>
+                            <div class="project-details-content">
+                                <h4 class="title">{{ currentVideoTitle}}</h4>
+                                <p>{{  currentVideDescription}}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="blog-widget">
+                                <div class="rc-post-wrap mb-4" *ngFor="let video of playlist" (click)="playVideo(video)">
+                                    <div class="rc-post-item">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img [src]="video.posterUrl" [alt]="video.title">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <!-- <span class="date"><i class="far fa-calendar"></i>22 Jan, 2023</span> -->
+                                            <h2 class="title">
+                                                <a >{{ video.title }}</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                            <!-- <div class="project-details-info">
+                                <div class="row mb-3 video-info-box" *ngFor="let video of playlist" (click)="playVideo(video)">
+                                    <div class="col-md-4">
+                                        <img [src]="video.posterUrl" [alt]="video.title">
+                                    </div>
+                                   <div class="col-md-8">
+                                    <h6>{{ video.title }}</h6>
+                                    <p><small>{{ video.description | slice:0:50 }}...</small></p>
+                                   </div>
+                                   
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
