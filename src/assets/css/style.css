@@ -1,4 +1,3 @@
-
 /* CSS Index
 ============================
 01. Variable CSS
@@ -49,7 +48,7 @@
 
 :root {
     --tg-body-font-family: 'proxima-novel', sans-serif;
-    --tg-heading-font-family: 'Playfair Display',Crimson Pro, sans-serif;
+    --tg-heading-font-family: 'Playfair Display', Crimson Pro, sans-serif;
     /* --tg-primary-color: #0055FF; */
     --tg-primary-color: #051433;
     --tg-secondary-color: #00194C;
@@ -244,7 +243,7 @@ p {
 hr {
     border-bottom: 1px solid var(--tg-primary-color);
     border-top: 0 none;
-    margin: 30px 0;
+     margin: 10px 0; 
     padding: 0;
 }
 
@@ -677,7 +676,8 @@ label {
     border-bottom: 1px solid;
 }
 
-.navbar-wrap>ul>li.active>a.donate, .navbar-wrap>ul>li:hover>a.donate {
+.navbar-wrap>ul>li.active>a.donate,
+.navbar-wrap>ul>li:hover>a.donate {
     /* color: var(--tg-primary-color); */
     background: #f8cf65;
     border: 1px solid #f8cf65;
@@ -1387,10 +1387,10 @@ label {
     float: right;
     font-size: 15px;
     cursor: pointer;
-    line-height:2;
+    line-height: 2;
     color: var(--tg-white);
     display: none;
-    margin-top: 6px;
+    margin-top: -5px;
     padding: 5px 10px;
 }
 
@@ -9048,7 +9048,7 @@ label {
 }
 
 .blog-details-content blockquote {
-    margin: 50px 50px  50px 5px;
+    margin: 50px 50px 50px 5px;
     background: var(--tg-section-background);
     padding: 50px 120px 50px 50px;
     position: relative;
@@ -9947,11 +9947,12 @@ label {
 }
 
 
-.hero-description{
+.hero-description {
     color: var(--tg-white);
     font-size: 18px;
     font-family: proxima-novel;
 }
+
 .button.text {
     background-color: initial;
     border-bottom: 1px solid #140e26;
@@ -9964,28 +9965,31 @@ label {
     font-size: 15px;
     font-family: 'proxima-novel';
 }
-.abt-icon{
+
+.abt-icon {
     font-size: 11px;
     margin-left: 5px;
     color: #f8cf65;
 }
 
 
-.bg-white{
+.bg-white {
     background-color: #fff;
 }
 
-.bg-gray-light{
+.bg-gray-light {
     background-color: #f9f9fa;
 }
-.color-white{
+
+.color-white {
     color: #fff !important;
 }
-.text-justify{
+
+.text-justify {
     text-align: justify;
 }
 
-.about-content-inner p{
+.about-content-inner p {
     font-size: 18px;
     text-align: justify;
 }
@@ -9998,27 +10002,28 @@ label {
     color: #fff;
 }
 
-.donate{
+.donate {
     /* background: #f8cf65;
     padding: 10px 20px;
     color: #140e2d !important;
     border: none;
  */
 
- padding: 10px 20px!important;
- color: #fff !important;
- border: 1px solid #f0cf65;
- border-radius: 5px;
+    padding: 10px 20px !important;
+    color: #fff !important;
+    border: 1px solid #f0cf65;
+    border-radius: 5px;
 
 
 }
-.donate:hover{
+
+.donate:hover {
     background: transparent;
     color: #fff;
     border: 1px solid #f8cf65;
 }
 
-.body-p-1{
+.body-p-1 {
     font-family: 'Crimson Pro', poppins;
     font-size: 20px;
     text-align: justify;
@@ -10087,7 +10092,56 @@ label {
 }
 
 
-.video-info-box{
+.video-info-box {
     cursor: pointer;
 }
 
+
+
+.video-widget {
+    border: 1px solid hsl(220, 41%, 91%);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+div>youtube-player>iframe {
+    display: block;
+    width: 100%;
+}
+
+.cursor-p {
+    cursor: pointer;
+}
+
+.button{
+    background-color: #4732ca;
+    border: 0;
+    border-radius: 0 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 20px 24px 18px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    white-space: normal;
+    width: auto;
+}
+
+a.button.secondary,
+button.secondary,
+input[type=button].secondary,
+input[type=reset].secondary,
+input[type=submit].secondary {
+    background-color: #f8cf65;
+    color: #140e26;
+}
+
+@media (min-width: 768px) {
+    .cta-action .button {
+        margin-top: 20px;
+    }
+}

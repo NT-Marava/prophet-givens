@@ -45,7 +45,6 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-    console.log("fuck")
     let slug = this.route.snapshot.paramMap.get('slug');
 
   }

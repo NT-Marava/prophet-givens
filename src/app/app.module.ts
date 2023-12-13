@@ -1,4 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA,NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { register } from 'swiper/element/bundle';
@@ -17,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 
 
 import { SwiperDirective } from './directives/swiper.directive';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 // register Swiper custom elements
 register();
 @NgModule({
@@ -34,12 +36,16 @@ register();
     ContactComponent
   ],
   imports: [
+    HttpClientModule,
     YouTubePlayerModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [
-    provideClientHydration()
+    HttpClientModule,
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent],
   schemas: [

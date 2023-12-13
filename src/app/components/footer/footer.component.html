@@ -9,7 +9,10 @@
 								<a href="index.html"><img src="../../../assets/img/logo/givens-logo.png" alt=""></a>
 							</div>
 							<div class="footer-content">
-								<p>Get in touch with me on various platforms</p>
+								<p class="text-justify mb-3">Prophet Givens Chizenga is a highly esteemed Minister of the Word of God and a firm
+									believer in the unlimited power of Christ Jesus. His profound vision and unwavering
+									passion can be summarized by the inspiring words, "Heaven Full, Hell Empty."</p>
+						
 								<h6 class="title">Email: info&#64;prophetgivenschizenga.com</h6>
 								<div class="footer-social footer-social-three">
 									<div class="social-share-inner-left mt-5">
@@ -48,45 +51,43 @@
 							<h4 class="fw-title">Send Me A Message</h4>
 							<div class="footer-info">
 								<form action="#" method="POST">
+									<div class="form-floating d-none">
+										<input type="text" class="form-control form-control-lg br-0" id="job"
+											placeholder="YOUR NAME" name="job" [(ngModel)]="job">
+									</div>
 									<div class="form-floating mb-3">
-										<input type="email" class="form-control form-control-lg" id="name">
-									<label for="name">Your Name</label>
+										<input type="text" class="form-control form-control-lg br-0" id="name"
+											placeholder="YOUR NAME" name="name" [(ngModel)]="name">
+										<label for="name">YOUR NAME</label>
 									</div>
 									<div class="row form-group mb-3">
-										<!-- <div class="form-floating mb-3">
-											<input type="text" class="form-control" id="phone" placeholder="name@example.com">
-											<label for="phone">PHONE NUMBER</label>
-										  </div>
-										<div class="col-md-6">
-											<input class="form-control form-control-lg br-0" type="text"
-												placeholder="EMAIL ADDRESS">
-										</div> -->
-										<div class="col-md-6">
-											<div class="form-floating br-0">
-												<input type="email" class="form-control form-control-lg" id="email"
-													placeholder="name@example.com">
-												<label for="email">Email address</label>
+										<div class="col-md-6 mb-3">
+											<div class="form-floating">
+												<input type="text" class="form-control form-control-lg br-0" id="email"
+													placeholder="EMAIL ADDRESS" name="email" [(ngModel)]="email">
+												<label for="email">EMAIL ADDRESS</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-floating br-0">
-												<input type="text" class="form-control form-control-lg" id="mobile"
-													placeholder="Password">
-												<label for="mobile">Password</label>
+												<input type="text" class="form-control form-control-lg br-0" id="phone"
+													placeholder="PHONE NUMBER" name="phone" [(ngModel)]="phone">
+												<label for="phone">PHONE NUMBER</label>
 											</div>
 										</div>
 
-	
+
 									</div>
 
 									<div class="form-floating mb-3">
-										<textarea class="form-control br-0" placeholder="Leave a comment here"
-											id="floatingTextarea" style="height:100px"></textarea>
-										<label for="floatingTextarea">Comments</label>
+										<textarea class="form-control br-0" placeholder="YOUR MESSAGE"
+											id="floatingTextarea" name="message" [(ngModel)]="message"
+											style="height:150px"></textarea>
+										<label for="floatingTextarea">MESSAGE</label>
 									</div>
 									<div class="d-grid gap-2">
-										<button class="button-block btn-secondary btn-block br-0"
-											type="button">Submit</button>
+										<button class="button-block btn-secondary btn-block br-0" type="button"
+											(click)="submitForm()">Submit</button>
 									</div>
 								</form>
 							</div>
