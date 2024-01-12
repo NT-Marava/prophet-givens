@@ -1,0 +1,17 @@
+/* .event-card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .event-card {
+    flex: 1 1 300px;  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-card img {
+    flex: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  } */

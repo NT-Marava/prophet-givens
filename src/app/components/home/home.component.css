@@ -1,4 +1,25 @@
 /* @import '../../assets/css/swiper.min.css'; */
+
+.fade-in-animation {
+  animation: fade-in 4s linear infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 .swiper-button-next, .swiper-rtl .swiper-button-prev, .swiper-button-prev, .swiper-rtl .swiper-button-next{
     top: 40px;
     width: 50px;

@@ -7,6 +7,7 @@ import { EventsComponent } from './components/events/events.component';
 import { MinistryComponent } from './components/ministry/ministry.component';
 import { WatchComponent } from './components/watch/watch.component';
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
+import { EventComponent } from './components/event/event.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'ministry', component: MinistryComponent },
   { path: 'events', component: EventsComponent },
+  { path: 'events/:slug', component: EventComponent },
   { path: 'watch', component: WatchComponent },
   { path: 'partnership', component: PartnerWithUsComponent },
 ];

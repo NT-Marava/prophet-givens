@@ -1,25 +1,43 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { RequestService } from '../../services/request.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert2'
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  selector: 'app-event',
+  templateUrl: './event.component.html',
+  styleUrl: './event.component.css'
 })
-export class FooterComponent {
-  currentYear: number;
+export class EventComponent {
+  events: any[] = [];
+  currentEvent!: any;
+  slug!: any;
+
   name: string = '';
   email: string = '';
   phone: string = '';
-  // subject!: string;
-  message: string = '';
+  eventID!: number;
+  location: string = '';
   job: string = '';
 
-  constructor(private http: HttpClient) {
-    this.currentYear = new Date().getFullYear();
+  constructor(private request: RequestService, private router: Router, private route: ActivatedRoute) {
+    this.slug = this.route.snapshot.paramMap.get('slug');
+    this.getEvents();
+
+  }
+  ngOnInit() {
+    this.getEvents();
   }
 
+
+  getEvents() {
+    this.request.get("events/getall/").subscribe(
+      result => {
+        this.events = result;
+        this.currentEvent = this.events.filter(a => a.slug === this.slug)[0];
+        console.log(this.currentEvent)
+      });
+  }
   readonly Toast = swal.mixin({
     toast: true,
     position: 'top-end',
@@ -34,20 +52,21 @@ export class FooterComponent {
       toast.addEventListener('mouseleave', swal.resumeTimer)
     }
   })
-
-  submitForm() {
+  registerForEvent() {
     const formData = {
       name: this.name,
       phone: this.phone,
-      message: this.message,
+      location: this.location,
       email: this.email,
+      event_id: this.currentEvent.id,
       job: this.job
     };
     if (formData.job == "" || formData.job == null) {
       console.log(formData);
-      this.http.post('https://prophetgivenschizenga.com/send_email.php', formData)
+      this.request.post('/events/registration/', formData)
         .subscribe({
           next: (response: any) => {
+            console.log(response)
             if (response.success) {
               this.Toast.fire({
                 icon: 'success',

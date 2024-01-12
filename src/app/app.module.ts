@@ -15,15 +15,18 @@ import { MinistryComponent } from './components/ministry/ministry.component';
 import { EventsComponent } from './components/events/events.component';
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 import { ContactComponent } from './components/contact/contact.component';
-
+import { SafeHtmlPipe } from './util/safe-html.pipe';
 
 import { SwiperDirective } from './directives/swiper.directive';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { RequestService } from './services/request.service';
+import { EventComponent } from './components/event/event.component';
 // register Swiper custom elements
 register();
 @NgModule({
   declarations: [
     SwiperDirective,
+    SafeHtmlPipe,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -33,7 +36,8 @@ register();
     MinistryComponent,
     EventsComponent,
     PartnerWithUsComponent,
-    ContactComponent
+    ContactComponent,
+    EventComponent
   ],
   imports: [
     HttpClientModule,
@@ -45,7 +49,8 @@ register();
   providers: [
     HttpClientModule,
     provideClientHydration(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    RequestService
   ],
   bootstrap: [AppComponent],
   schemas: [

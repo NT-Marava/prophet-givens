@@ -44,11 +44,13 @@ export class WatchComponent {
   currentVideoId = this.playlist[this.playlist.length - 1].id;
   currentVideoTitle = this.playlist[this.playlist.length - 1].title;
   currentVideDescription = this.playlist[this.playlist.length - 1].description;
+  posterUrl = this.playlist[this.playlist.length - 1].posterUrl;
 
-  playVideo(video: { id: string; title: string; description: string }) {
+  playVideo(video: { id: string; title: string; description: string; posterUrl: string}) {
     this.currentVideoId = video.id;
     this.currentVideoTitle = video.title;
     this.currentVideDescription = video.description;
+    this.posterUrl = video.posterUrl;
   }
   // onPlayerReady(event: any) {
   //   this.player = event.target;
